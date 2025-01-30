@@ -36,3 +36,21 @@ public:
         return ans;
     }
 };
+
+// Approach
+// 1. We will traverse the matrix in a spiral order by maintaining four boundaries:
+//    - `top` for the top row
+//    - `bottom` for the bottom row
+//    - `left` for the leftmost column
+//    - `right` for the rightmost column
+// 2. Start from the top-left of the matrix and keep moving in a clockwise direction:
+//    - Traverse the top row from left to right.
+//    - Traverse the right column from top to bottom.
+//    - Traverse the bottom row from right to left (if still within bounds).
+//    - Traverse the left column from bottom to top (if still within bounds).
+// 3. After completing each traversal, adjust the boundaries to move inward until all elements are covered.
+
+// Complexity Analysis
+// - Time Complexity: O(n * m), where n is the number of rows and m is the number of columns. 
+//   Every element in the matrix is visited once.
+// - Space Complexity: O(n * m), for the resultant vector to store the spiral order.

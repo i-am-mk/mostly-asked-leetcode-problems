@@ -43,3 +43,13 @@ public:
         }
     }
 };
+
+// Approach
+// 1. Traverse the matrix to find all the cells containing `0`.
+// 2. Whenever a `0` is found at position `(i, j)`, mark the entire row `i` and column `j` by setting all non-zero elements to `-1` (as a placeholder).
+// 3. After the marking phase, traverse the matrix again and replace all `-1` values with `0`.
+// 4. This ensures that only the required rows and columns are set to `0` without affecting other elements during traversal.
+
+// Complexity Analysis
+// - Time Complexity: O(n * m), since we traverse the matrix multiple times.
+// - Space Complexity: O(1), since we modify the matrix in place without using extra space.

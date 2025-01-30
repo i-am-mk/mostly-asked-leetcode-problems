@@ -54,3 +54,15 @@ public:
             return (double)((double)ele1+(double)ele2)/2.0;
     }
 };
+
+// Approach
+// 1. Use two pointers (`i` for `nums1` and `j` for `nums2`) to traverse both arrays simultaneously.
+// 2. Maintain a count (`count`) to track elements in a virtual merged array.
+// 3. Find the two middle elements needed for median calculation:
+//    - `ele1 = (n/2) - 1` (for even-sized arrays)
+//    - `ele2 = n/2` (always needed)
+// 4. Use a while loop to traverse the arrays in sorted order without explicitly merging.
+
+// Complexity Analysis
+// - Time Complexity: O(n1 + n2), since we traverse the two arrays once.
+// - Space Complexity: O(1), since no extra storage is used.

@@ -62,3 +62,22 @@ public:
         }
     }
 };
+
+// Approach
+// 1. The Game of Life involves updating the board based on the current state of cells, where:
+//    - A live cell with fewer than 2 live neighbours dies (under-population).
+//    - A live cell with more than 3 live neighbours dies (over-population).
+//    - A dead cell with exactly 3 live neighbours becomes alive (reproduction).
+//    - All other live cells remain alive and all other dead cells remain dead.
+// 2. We iterate over each cell in the grid and count its live neighbours using the `getLiveNeighbours` function. 
+//    This function checks all 8 possible directions around the cell (top, bottom, left, right, and the 4 diagonals).
+// 3. Based on the number of live neighbours, we update the board accordingly:
+//    - If the cell is dead and has exactly 3 live neighbours, it becomes live.
+//    - If the cell is live and has fewer than 2 or more than 3 live neighbours, it dies.
+
+// Complexity Analysis
+// Time Complexity:
+// - The time complexity is O(n * m), where n is the number of rows and m is the number of columns in the board. 
+//   We iterate over each cell once and check its 8 possible neighbours, which is constant time for each cell.
+// Space Complexity:
+// - The space complexity is O(n * m) for storing a copy of the board to count live neighbours, which is required to prevent modifying the board while evaluating its new state.

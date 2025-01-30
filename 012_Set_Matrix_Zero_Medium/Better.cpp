@@ -27,3 +27,13 @@ public:
         }
     }
 };
+
+// Approach
+// 1. Create two auxiliary arrays, `row` and `col`, of size `n` and `m`, initialized with `0`.
+// 2. Traverse the matrix to find all cells containing `0` and mark their corresponding row and column in `row` and `col` arrays.
+// 3. Traverse the matrix again and set `matrix[i][j] = 0` if either `row[i]` or `col[j]` is marked as `1`.
+// 4. This ensures that only necessary rows and columns are updated without modifying the matrix prematurely.
+
+// Complexity Analysis
+// - Time Complexity: O(n * m), since we traverse the matrix twice.
+// - Space Complexity: O(n + m), due to the additional `row` and `col` arrays used for marking.

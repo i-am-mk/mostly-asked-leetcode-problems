@@ -37,3 +37,20 @@ public:
         return dummy->next;
     }
 };
+
+// Approach:
+// 1. Use two pointers (`temp1` and `temp2`) to traverse the given linked lists.
+// 2. Maintain a `carry` variable to store any overflow from the sum of two digits.
+// 3. Initialize a dummy node and a `current` pointer to construct the result linked list.
+// 4. Loop through both lists until all digits are processed:
+//    - Add the values from both lists and the carry.
+//    - Create a new node with the last digit of the sum (`sum % 10`).
+//    - Move the `current` pointer to this new node.
+//    - Update the carry (`sum / 10`) for the next iteration.
+// 5. If a carry remains after processing both lists, create a new node for it.
+// 6. Return `dummy->next`, skipping the dummy node to get the final result.
+ 
+// Complexity Analysis
+// Time Complexity: O(max(N, M)), where N and M are the lengths of the input linked lists.
+// - Each node is processed once, making the complexity linear.
+// Space Complexity: O(max(N, M)), since we create a new linked list to store the result.
