@@ -26,8 +26,8 @@ private:
     {
         if(root==nullptr)
             return;
-        int left = getHeight(root->left, 0);
-        int right = getHeight(root->right, 0);
+        int left = getHeight(root->left);
+        int right = getHeight(root->right);
 
         longestDiameter=max(longestDiameter, left+right);
         getLongestDiameter(root->left);
